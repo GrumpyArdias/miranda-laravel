@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,13 +48,13 @@ Route::post('/contact', [CommentController::class, 'store']);
 
 Route::get('/offers', [RoomController::class, 'offers']);
 
-
-
 Route::get('/rooms', [RoomController::class, 'index']);
 
 Route::get('/room-details', [RoomController::class, 'show']);
 
 Route::post('/room-details', [RoomController::class, 'store']);
 
+Route::get("/order", [OrderController::class, "index"])->middleware(['auth', 'verified']);
+Route::post("/order", [OrderController::class, "store"])->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';
