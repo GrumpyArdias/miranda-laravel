@@ -77,8 +77,7 @@
             </p>
             <div class="minimal-card__price">
                 <h5>${{$rooms[$i]['price']}}<sub>/Night</sub></h5>
-                {{dd($rooms[$i]['id'])}}
-                <a href="../room-details?id={{$rooms[$i]['id']}}">
+                <a href="room-details?id={{$rooms[$i]['id']}}">
                     <h6>Booking Now</h6>
                 </a>
             </div>

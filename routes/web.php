@@ -28,3 +28,5 @@ Route::post('/contact', [CommentController::class, 'store']);
 Route::get('/offers', [RoomController::class, 'offers']);
 
 Route::get('/rooms', [RoomController::class, 'index']);
+Route::get('/room-details', [RoomController::class, 'show']);
+Route::post('/room-details', [RoomController::class, 'store']);

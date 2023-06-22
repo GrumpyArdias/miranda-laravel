@@ -4,25 +4,74 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use Illuminate\Http\Request;
+use App\Models\Booking;
+use App\Helpers\Helpers;
 
 class RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public $roomPhotos = [
-        "single" => "Assets/img-room/room4.jpg",
-        "double" => "Assets/img-room/room1.jpg",
-        "double-superior" => "Assets/img-room/room2.jpg",
-        "suite" => "Assets/img-room/room3.jpg",
-    ];
+
 
     public function index()
     {
-        $rooms = Room::take(6)->get();
+        $wantedCheckIn = request("checkIn");
+        $wantedCheckOut = request("checkOut");
+        $wantedCheckInTs = strtotime($wantedCheckIn);
+        $wantedCheckOutTs = strtotime($wantedCheckOut);
+        $availableRooms = [];
 
 
-        return view('rooms', ['rooms' => $rooms, "roomPhotos" => $this->roomPhotos]);
+
+        if ($wantedCheckIn && $wantedCheckOut) {
+
+            $rooms = Room::all();
+
+            foreach ($rooms as $room) {
+                $roomBookedDays = Booking::select("checkIn", "checkOut",)
+                    ->where("roomId", $room["id"])->get();
+
+
+                $retificatedDate = [];
+
+                foreach ($roomBookedDays as $dates) {
+                    $retificatedDate[] = [strtotime($dates['checkIn']), strtotime($dates['checkOut'])];
+                }
+
+
+                $isAvailable = true;
+
+
+                foreach ($retificatedDate as $booking) {
+                    if ($booking[0] >= $wantedCheckInTs && $booking[1] <= $wantedCheckOutTs) {
+
+                        $isAvailable = false;
+                    }
+                    if ($booking[0] <= $wantedCheckInTs && $booking[1] >= $wantedCheckOutTs) {
+
+                        $isAvailable = false;
+                    }
+                    if ($booking[0] <= $wantedCheckOutTs && $booking[0] >= $wantedCheckInTs) {
+
+                        $isAvailable = false;
+                    }
+                    if ($booking[1] >= $wantedCheckInTs && $booking[1] <= $wantedCheckOutTs) {
+
+                        $isAvailable = false;
+                    }
+                }
+
+
+                if ($isAvailable) {
+                    $availableRooms[] = $room;
+                }
+            }
+            return view('rooms', ["rooms" => $availableRooms, "roomPhotos" => Helpers::$roomPhotos]);
+        } else {
+            $rooms = Room::take(6)->get();
+            return view('rooms', ['rooms' => $rooms, "roomPhotos" => Helpers::$roomPhotos]);
+        }
     }
 
     /**
@@ -30,23 +79,88 @@ class RoomController extends Controller
      */
     public function offers()
     {
-        $rooms = Room::take(5)->get();
-        return view('offers', ['rooms' => $rooms, "roomPhotos" => $this->roomPhotos]);
+        // $rooms = Room::take(5)->get();
+        $rooms = Room::orderBy('discount', 'desc')
+            ->take(5)
+            ->get();
+        return view('offers', ['rooms' => $rooms, "roomPhotos" => Helpers::$roomPhotos]);
     }
 
 
     public function store(Request $request)
     {
-        //
+        $ValidateData =  $request->validate(["checkIn" => "required", "checkOut" => "required"]);
+
+        $id = request('id');
+
+        $room = Room::find($id);
+
+
+        $roomBookedDays = Booking::select("checkIn", "checkOut",)
+            ->where("roomId", $id)->get();
+        $wantedCheckIn = request('checkIn');
+        $wantedCheckOut = request('checkOut');
+
+
+        $retificatedDate = [];
+
+        foreach ($roomBookedDays as $dates) {
+            $retificatedDate[] = [strtotime($dates['checkIn']), strtotime($dates['checkOut'])];
+        }
+
+
+
+        $isAvailable = true;
+        $wantedCheckInTs = strtotime($wantedCheckIn);
+        $wantedCheckOutTs = strtotime($wantedCheckOut);
+        // dd($wantedCheckIn);
+        $currentDate = date('m/d/Y');
+
+
+
+        foreach ($retificatedDate as $booking) {
+            if ($booking[0] > $wantedCheckInTs && $booking[1] < $wantedCheckOutTs) {
+
+                $isAvailable = false;
+            }
+            if ($booking[0] < $wantedCheckInTs && $booking[1] > $wantedCheckOutTs) {
+
+                $isAvailable = false;
+            }
+            if ($booking[0] < $wantedCheckOutTs && $booking[0] > $wantedCheckInTs) {
+
+                $isAvailable = false;
+            }
+            if ($booking[1] > $wantedCheckInTs && $booking[1] < $wantedCheckOutTs) {
+
+                $isAvailable = false;
+            }
+        }
+
+
+        if ($isAvailable) {
+
+            Booking::create([
+                "fullName" => "Mario", "bookingDate" => $currentDate,
+                "checkIn" =>  Helpers::dateRetification($wantedCheckIn), "checkOut" => Helpers::dateRetification($wantedCheckOut),
+                "specialRquest" => "none", "roomType" => $room["bedType"], "roomId" => $id,
+                "status" => "booked"
+            ]);
+            return back()->with("success", "Booked!");
+        } else {
+            return back()->with("success", "Not Available at the moment");
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Room $room)
+    public function show()
     {
-        dd($room);
-        return;
+        $id = request('id');
+        $room = Room::find($id);
+
+        return view('room-details', ["room" => $room, "roomPhotos" => Helpers::$roomPhotos]);
     }
 
     /**
