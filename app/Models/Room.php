@@ -10,4 +10,7 @@ class Room extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = ['id', 'bedType', 'estatus', 'facilities', 'price', 'discount', 'doorNumber', 'floorNumber'];
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
 }

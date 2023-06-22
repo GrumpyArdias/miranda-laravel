@@ -20,20 +20,22 @@
 <section>
     <h4 class="availability-title">Check Availabiity</h4>
     <form class="main__form__container detail-form" method="post">
+        @csrf
         <div class="main__form__container__body detail-form__input1">
             <label>Check in</label>
-            <input type="date" id="date" placeholder="24th march 2020" name="checkIn"></input>
+            <input type="date" id="date" placeholder="24th march 2020" name="checkIn" pattern="\d{1,2}/\d{1,2}/\d{4}"></input>
         </div>
         <div class="main__form__container__body">
             <label>Check out</label>
-            <input type="date" placeholder="30th march 2020" name="checkOut"></input>
+            <input type="date" placeholder="30th march 2020" name="checkOut" pattern="\d{1,2}/\d{1,2}/\d{4}"></input>
         </div>
         <button>CHECK AVAILABILITY</button>
-        @if($isAvailable)
+        @if($status=Session::get("success"))
 
-        <h3 style="color:green">Booked!</h3>
+        <h3 style="color:green">{{$status}}</h3>
 
         @endif
+
 
     </form>
 </section>
@@ -46,30 +48,30 @@
     <div class="amenities__thin-line"></div>
     <div class="amenities__list">
         <div class="amenities__list__1">
-            <p class="amenities__list__p"><img src="../public/Assets/icon/air-conditioner.png" alt="">Air conditioner</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/breakfast.png" alt="">Breakfast</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/cleaning.png" alt="">Cleaning</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/grocery.png" alt="">Grocery</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/shop-near.png" alt="">Shop near/p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/247.png" alt="">24/7 Online Support</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/svg-gobbler - 2022-03-03T183435.137 1.png" alt="">Smart Security</p>
+            <p class="amenities__list__p"><img src="Assets/icon/air-conditioner.png" alt="">Air conditioner</p>
+            <p class="amenities__list__p"><img src="Assets/icon/breakfast.png" alt="">Breakfast</p>
+            <p class="amenities__list__p"><img src="Assets/icon/cleaning.png" alt="">Cleaning</p>
+            <p class="amenities__list__p"><img src="Assets/icon/grocery.png" alt="">Grocery</p>
+            <p class="amenities__list__p"><img src="Assets/icon/shop-near.png" alt="">Shop near/p>
+            <p class="amenities__list__p"><img src="Assets/icon/247.png" alt="">24/7 Online Support</p>
+            <p class="amenities__list__p"><img src="Assets/icon/svg-gobbler - 2022-03-03T183435.137 1.png" alt="">Smart Security</p>
         </div>
         <div class="amenities__list__2">
-            <p class="amenities__list__p"><img src="../public/Assets/icon/wifi.png" alt="">High speed WiFi</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/kitchen.png" alt="">Kitchen</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/shower.png" alt="">Shower</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/single-bed.png" alt="">Single bed</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/towel.png" alt="">Towels</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/locker.png" alt="">Strong Locker</p>
-            <p class="amenities__list__p"><img src="../public/Assets/icon/expert-team.png" alt="">Expert Team</p>
+            <p class="amenities__list__p"><img src="Assets/icon/wifi.png" alt="">High speed WiFi</p>
+            <p class="amenities__list__p"><img src="Assets/icon/kitchen.png" alt="">Kitchen</p>
+            <p class="amenities__list__p"><img src="Assets/icon/shower.png" alt="">Shower</p>
+            <p class="amenities__list__p"><img src="Assets/icon/single-bed.png" alt="">Single bed</p>
+            <p class="amenities__list__p"><img src="Assets/icon/towel.png" alt="">Towels</p>
+            <p class="amenities__list__p"><img src="Assets/icon/locker.png" alt="">Strong Locker</p>
+            <p class="amenities__list__p"><img src="Assets/icon/expert-team.png" alt="">Expert Team</p>
         </div>
     </div>
 </section>
 <!--avatar-->
 <div class="avatar">
-    <img src="../public/Assets/avatar1.jpg" alt="">
+    <img src="Assets/avatar1.jpg" alt="">
     <div class="avatar__check">
-        <!-- <img src="../public/Assets/icon/check_mark_icon 1.png" alt=""> -->
+        <!-- <img src="Assets/icon/check_mark_icon 1.png" alt=""> -->
     </div>
     <h4>Rosalina D. William</h4>
     <span>Founder, Qux Co.</span>
@@ -89,19 +91,19 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide card-img">
-                        <img src="../public/Assets/img-room/room1.jpg" alt="" />
+                        <img src="Assets/img-room/room1.jpg" alt="" />
                     </div>
                 </div>
             </div>
 
             <div class="services-icons" style="margin-bottom:40px">
-                <img src="../public/Assets/bed_icon.png" alt="bed" />
-                <img src="../public/Assets//wifi_icon.png" alt="wifi" />
-                <img src="../public/Assets//automobile_car_icon.png" alt="car" />
-                <img src="../public/Assets//cold_icon.png" alt="cold" />
-                <img src="../public/Assets//gym_icon.png" alt="gym" />
-                <img src="../public/Assets//smoking_no_icon.png" alt="no_smokin" />
-                <img src="../public/Assets//cocktail_drink.png" alt="cocktail" />
+                <img src="Assets/bed_icon.png" alt="bed" />
+                <img src="Assets//wifi_icon.png" alt="wifi" />
+                <img src="Assets//automobile_car_icon.png" alt="car" />
+                <img src="Assets//cold_icon.png" alt="cold" />
+                <img src="Assets//gym_icon.png" alt="gym" />
+                <img src="Assets//smoking_no_icon.png" alt="no_smokin" />
+                <img src="Assets//cocktail_drink.png" alt="cocktail" />
             </div>
             <div class="minimal-card">
                 <h4>Luxury Single room</h4>
@@ -122,19 +124,19 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide card-img">
-                        <img src="../public/Assets/img-room/room1.jpg" alt="" />
+                        <img src="Assets/img-room/room1.jpg" alt="" />
                     </div>
                 </div>
             </div>
 
             <div class="services-icons" style="margin-bottom:40px">
-                <img src="../public/Assets/bed_icon.png" alt="bed" />
-                <img src="../public/Assets//wifi_icon.png" alt="wifi" />
-                <img src="../public/Assets//automobile_car_icon.png" alt="car" />
-                <img src="../public/Assets//cold_icon.png" alt="cold" />
-                <img src="../public/Assets//gym_icon.png" alt="gym" />
-                <img src="../public/Assets//smoking_no_icon.png" alt="no_smokin" />
-                <img src="../public/Assets//cocktail_drink.png" alt="cocktail" />
+                <img src="Assets/bed_icon.png" alt="bed" />
+                <img src="Assets//wifi_icon.png" alt="wifi" />
+                <img src="Assets//automobile_car_icon.png" alt="car" />
+                <img src="Assets//cold_icon.png" alt="cold" />
+                <img src="Assets//gym_icon.png" alt="gym" />
+                <img src="Assets//smoking_no_icon.png" alt="no_smokin" />
+                <img src="Assets//cocktail_drink.png" alt="cocktail" />
             </div>
             <div class="minimal-card">
                 <h4>Luxury Single room</h4>
