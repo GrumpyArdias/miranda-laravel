@@ -83,6 +83,104 @@ header {
     display: none;
 }
 
+.Order-h3{
+    margin-top: 40px;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+   
+}
+#order-form{
+    max-width: 75vw;
+    display: flex;
+    flex-direction:column;
+    ;
+}
+
+.select-wrapper {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  #description{
+    max-width: 80%;
+  }
+
+  .select-wrapper select {
+    width: 60%;
+    padding: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px; 
+    color: #555;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-color: #f8f8f8;
+  }
+
+  .container-menu__headers-icon{
+    display: flex;
+    gap:10px;
+    margin-right: 10px;
+   
+  }
+
+  a, a:visited,a:active{
+    text-decoration: none;
+    color:unset
+  }
+
+  .pageDetailsAvailability__modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(119, 119, 119, 0.8039215686);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pageDetailsAvailability__modalContainer-hidden {
+    display: none;
+}
+.pageDetailsAvailability__modal {
+    background-color: #f8f8f8;
+    padding: 50px 60px 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageDetailsAvailability__modal__title {
+    font: normal 700 14px/15.2px "Archivo", sans-serif;
+    font-size: 24px;
+    letter-spacing: -0.54px;
+    color: #222;
+    text-align: center;
+}
+.pageDetailsAvailability__modal__text {
+    font: normal 400 26px/28.3px "Archivo", sans-serif;
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin: 30px 0;
+    max-width: 290px;
+}
+.pageDetailsAvailability__modal__btn {
+    padding: 15px;
+    width: 60%;
+}
+
+
 @media only screen and (min-width: 1000px) {
     header {
         position: static;
@@ -2016,7 +2114,7 @@ h5 sub {
 @media only screen and (min-width: 1000px) {
     .contact-container {
         display: flex;
-        width: 80%;
+        width: 80vw;
         margin: 0 auto;
         margin-top: 80px;
         margin-bottom: 80px;
@@ -2030,12 +2128,61 @@ h5 sub {
         gap: 30px;
     }
     .contact-form__input-container textarea {
-        width: 200%;
+        width: 100%;
     }
     .contact-form__submit {
         grid-column: 1/3;
     }
-}
+
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .Order-h3{
+        margin-top: 40px;
+        font-size: 36px;
+        font-weight: 800;
+        text-align: center;
+       
+    }
+    #order-form{
+        max-width: 75vw;
+        display: flex;
+        flex-direction:column;
+        ;
+    }
+
+    .select-wrapper {
+        position: relative;
+        display: flex;
+        gap: 10%;
+        justify-content: center;
+        align-items: center;
+      }
+      #description{
+        max-width: 100%;
+      }
+    
+      .select-wrapper select {
+        width: 60%;
+        padding: 15px; /* Increased padding for larger size */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        font-size: 16px; /* Increased font size for larger size */
+        color: #555;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        background-color: #f8f8f8;
+      }
+    
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -2045,5 +2192,7 @@ h5 sub {
 body {
     min-width: 320px;
 }
+
+
 
 /*# sourceMappingURL=styles.css.map */
