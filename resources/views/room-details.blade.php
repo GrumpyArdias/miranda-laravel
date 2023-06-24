@@ -32,7 +32,21 @@
         <button>CHECK AVAILABILITY</button>
         @if($status=Session::get("success"))
 
-        <h3 style="color:green">{{$status}}</h3>
+        <div class="pageDetailsAvailability__modalContainer" id="availabilityModal">
+            <div class="pageDetailsAvailability__modal">
+                <h2 class="pageDetailsAvailability__modal__title">
+                    ¡Thank you for your request!
+
+                </h2>
+                <p class="pageDetailsAvailability__modal__text">
+                    We have received it correctly. Someone from our Team will get back to you very soon.
+                    The Miranda Hotel
+                </p>
+                <button class="button button-variant1 pageDetailsAvailability__modal__btn" id="modalBtn">
+                    ACEPT
+                </button>
+            </div>
+        </div>
 
         @endif
 

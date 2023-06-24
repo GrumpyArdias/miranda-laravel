@@ -34,38 +34,38 @@
     <div class="amenities__list">
         <div class="amenities__list__1">
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/air-conditioner.png" alt="" />Air
+                <img src="Assets/icon/air-conditioner.png" alt="" />Air
                 conditioner
             </p>
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/breakfast.png" alt="" />Breakfast
+                <img src="Assets/icon/breakfast.png" alt="" />Breakfast
             </p>
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/icon/cleaning.png" alt="" />Cleaning
+                <img src="Assets/icon/cleaning.png" alt="" />Cleaning
             </p>
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/grocery.png" alt="" />Grocery
+                <img src="Assets/icon/grocery.png" alt="" />Grocery
             </p>
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/shop-near.png" alt="" />Shop near
+                <img src="Assets/icon/shop-near.png" alt="" />Shop near
             </p>
         </div>
 
         <div class="amenities__list__2">
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/icon/wifi.png" alt="" />High speed WiFi
+                <img src="Assets/icon/wifi.png" alt="" />High speed WiFi
             </p>
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/kitchen.png" alt="" />Kitchen
+                <img src="Assets/icon/kitchen.png" alt="" />Kitchen
             </p>
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/shower.png" alt="" />Shower
+                <img src="Assets/icon/shower.png" alt="" />Shower
             </p>
             <p class="amenities__list__p">
-                <img src="../public/Assets/icon/single-bed.png" alt="" />Single bed
+                <img src="Assets/icon/single-bed.png" alt="" />Single bed
             </p>
             <p class="amenities__list__p">
-                <img src=".../public/Assets/icon/towel.png" alt="" />Towels
+                <img src="Assets/icon/towel.png" alt="" />Towels
             </p>
         </div>
     </div>

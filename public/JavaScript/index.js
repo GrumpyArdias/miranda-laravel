@@ -1,91 +1,91 @@
 const swiper = new Swiper(".swiper_room", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+    // If we need pagination
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
 
 const swiper_facilities = new Swiper(".swiper_facilities", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+    // If we need pagination
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper_facilities-button-next",
-    prevEl: ".swiper_facilities-button-prev",
-  },
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper_facilities-button-next",
+        prevEl: ".swiper_facilities-button-prev",
+    },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper_facilities-scrollbar",
-    draggable: true,
-  },
+    // And if we need scrollbar
+    scrollbar: {
+        el: ".swiper_facilities-scrollbar",
+        draggable: true,
+    },
 });
 
 const swiper_food = new Swiper(".swiper_food", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+    // If we need pagination
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper_food-button-next",
-    prevEl: ".swiper_food-button-prev",
-  },
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper_food-button-next",
+        prevEl: ".swiper_food-button-prev",
+    },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper_food-scrollbar",
-    draggable: true,
-  },
+    // And if we need scrollbar
+    scrollbar: {
+        el: ".swiper_food-scrollbar",
+        draggable: true,
+    },
 });
 
 const swiper_gourmet = new Swiper(".swiper_gourmet", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+    // If we need pagination
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 
-  // Navigation arrows
-  // navigation: {
-  //   nextEl: '.swiper_food-button-next',
-  //   prevEl: '.swiper_food-button-prev',
-  // },
+    // Navigation arrows
+    // navigation: {
+    //   nextEl: '.swiper_food-button-next',
+    //   prevEl: '.swiper_food-button-prev',
+    // },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper_gourmet-scrollbar",
-    draggable: true,
-  },
+    // And if we need scrollbar
+    scrollbar: {
+        el: ".swiper_gourmet-scrollbar",
+        draggable: true,
+    },
 });
 
 const menuMobil = document.querySelector(".container-menu__toggle");
@@ -94,17 +94,17 @@ const menuCloseMobil = document.querySelector(".container-menu__burger-close");
 menuCloseMobil.style.display = "none";
 
 function toggleMenu(e) {
-  e.preventDefault();
-  let toggleMenuMobil = document
-    .querySelector(".nav__list")
-    .classList.toggle("is_active");
-  if (toggleMenuMobil) {
-    menuOpenMobil.style.display = "none";
-    menuCloseMobil.style.display = "inline-block";
-  } else {
-    menuOpenMobil.style.display = "initial";
-    menuCloseMobil.style.display = "none";
-  }
+    e.preventDefault();
+    let toggleMenuMobil = document
+        .querySelector(".nav__list")
+        .classList.toggle("is_active");
+    if (toggleMenuMobil) {
+        menuOpenMobil.style.display = "none";
+        menuCloseMobil.style.display = "inline-block";
+    } else {
+        menuOpenMobil.style.display = "initial";
+        menuCloseMobil.style.display = "none";
+    }
 }
 menuMobil.addEventListener("click", toggleMenu);
 
@@ -114,19 +114,44 @@ let initialValue = 0;
 let positionScroll = window.innerWidth < 999 ? true : false;
 
 window.addEventListener("scroll", (e) => {
-  if (window.scrollY > 200) {
-    nav.classList.remove("topMenu");
-    nav.classList.add("menuHidden");
-  } else {
-    nav.classList.add("topMenu");
-    nav.classList.remove("menuHidden");
-  }
+    if (window.scrollY > 200) {
+        nav.classList.remove("topMenu");
+        nav.classList.add("menuHidden");
+    } else {
+        nav.classList.add("topMenu");
+        nav.classList.remove("menuHidden");
+    }
 });
 
 document.addEventListener("mouseover", (e) => {
-  if (e.y < 100 && window.scrollY > 200) {
-    nav.classList.remove("menuHidden");
-  } else if (e.y > 100 && window.scrollY > 200) {
-    nav.classList.add("menuHidden");
-  }
+    if (e.y < 100 && window.scrollY > 200) {
+        nav.classList.remove("menuHidden");
+    } else if (e.y > 100 && window.scrollY > 200) {
+        nav.classList.add("menuHidden");
+    }
 });
+
+const form = document.getElementById("availabilityForm");
+const modal = document.getElementById("availabilityModal");
+const aceptBtn = document.getElementById("modalBtn");
+
+form === null || form === void 0
+    ? void 0
+    : form.addEventListener("keyup", function (e) {
+          e.target.classList.remove("pageContactForm__form__inputError");
+      });
+form === null || form === void 0
+    ? void 0
+    : form.addEventListener("change", function (e) {
+          e.target.classList.remove("pageContactForm__form__inputError");
+      });
+
+aceptBtn === null || aceptBtn === void 0
+    ? void 0
+    : aceptBtn.addEventListener("click", function () {
+          modal === null || modal === void 0
+              ? void 0
+              : modal.classList.add(
+                    "pageDetailsAvailability__modalContainer-hidden"
+                );
+      });
