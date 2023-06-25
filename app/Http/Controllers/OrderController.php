@@ -43,7 +43,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $orders = Order::all();
+        dd($orders);
     }
 
     /**

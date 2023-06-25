@@ -69,7 +69,9 @@
             </p>
         </div>
     </div>
-    <button class="book-now">BOOK NOW</button>
+    <a href="../room-details?id={{$room['id']}}">
+        <button class="book-now">BOOK NOW</button>
+    </a>
 </section>
 
 @endforeach

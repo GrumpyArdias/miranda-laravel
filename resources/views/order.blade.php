@@ -26,6 +26,25 @@
         </div>
         <button class="contact-form__submit" type="submit">Place Order</button>
     </form>
+    @if($status=Session::get("success"))
+
+    <div class="pageDetailsAvailability__modalContainer" id="availabilityModal">
+        <div class="pageDetailsAvailability__modal">
+            <h2 class="pageDetailsAvailability__modal__title">
+                ¡Thank you for your Order!
+
+            </h2>
+            <p class="pageDetailsAvailability__modal__text">
+                We have received it correctly. Someone from our Team will get back to you very soon. <br>
+                The Miranda Hotel
+            </p>
+            <button class="button button-variant1 pageDetailsAvailability__modal__btn" id="modalBtn">
+                ACEPT
+            </button>
+        </div>
+    </div>
+
+    @endif
 </div>
 
 

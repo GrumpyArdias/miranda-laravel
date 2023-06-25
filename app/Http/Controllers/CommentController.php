@@ -13,7 +13,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        return view("contact");
     }
 
     /**
@@ -40,8 +40,8 @@ class CommentController extends Controller
         ];
         Comment::create($comment);
 
-
-        return view("contact");
+        return back()->with("success", "success");
+        // return view("contact");
     }
 
     /**

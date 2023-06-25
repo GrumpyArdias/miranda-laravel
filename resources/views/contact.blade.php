@@ -59,11 +59,30 @@
         <img src="Assets/icon/contact/book.png" alt="" />
     </div>
     <div class="contact-form__input-container">
-        <textarea rows="10" cols="22" name="message"></textarea>
+        <textarea id="contact-textarea" rows="10" cols="22" name="message"></textarea>
         <img src="Assets/icon/contact/pencil.png" alt="" />
     </div>
     <button class="contact-form__submit" type="submit">Send</button>
 </form>
+@if($status=Session::get("success"))
+
+<div class="pageDetailsAvailability__modalContainer" id="availabilityModal">
+    <div class="pageDetailsAvailability__modal">
+        <h2 class="pageDetailsAvailability__modal__title">
+            ¡Thank you for your request!
+
+        </h2>
+        <p class="pageDetailsAvailability__modal__text">
+            We have received it correctly. Someone from our Team will get back to you very soon.
+            The Miranda Hotel
+        </p>
+        <button class="button button-variant1 pageDetailsAvailability__modal__btn" id="modalBtn">
+            ACEPT
+        </button>
+    </div>
+</div>
+
+@endif
 
 
 
