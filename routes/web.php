@@ -60,5 +60,7 @@ Route::post('/room-details', [RoomController::class, 'store']);
 
 Route::get("/order", [OrderController::class, "index"])->middleware(['auth', 'verified']);
 Route::post("/order", [OrderController::class, "store"])->middleware(['auth', 'verified']);
+Route::put("/order", [OrderController::class, "update"])->middleware(['auth', 'verified']);
+Route::delete("/order", [OrderController::class, "destroy"])->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';

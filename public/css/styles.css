@@ -83,18 +83,16 @@ header {
     display: none;
 }
 
-.Order-h3{
+.Order-h3 {
     margin-top: 40px;
     font-size: 36px;
     font-weight: 800;
     text-align: center;
-   
 }
-#order-form{
+#order-form {
     max-width: 75vw;
     display: flex;
-    flex-direction:column;
-    ;
+    flex-direction: column;
 }
 
 .select-wrapper {
@@ -105,39 +103,40 @@ header {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-  }
-  #description{
+}
+#description {
     max-width: 80%;
-  }
+}
 
-  .select-wrapper select {
+.select-wrapper select {
     width: 60%;
-    padding: 15px; 
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
-    font-size: 16px; 
+    font-size: 16px;
     color: #555;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;
     background-color: #f8f8f8;
-  }
+}
 
-  .container-menu__headers-icon{
+.container-menu__headers-icon {
     display: flex;
-    gap:10px;
+    gap: 10px;
     margin-right: 10px;
-   
-  }
+}
 
-  a, a:visited,a:active{
+a,
+a:visited,
+a:active {
     text-decoration: none;
-    color:unset
-  }
+    color: unset;
+}
 
-  .pageDetailsAvailability__modalContainer {
+.pageDetailsAvailability__modalContainer {
     position: fixed;
     top: 0;
     left: 0;
@@ -179,9 +178,6 @@ header {
     padding: 15px;
     width: 60%;
 }
-
-
-
 
 @media only screen and (min-width: 1000px) {
     header {
@@ -2137,24 +2133,18 @@ h5 sub {
     }
 
     .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     }
-    .Order-h3{
+    .Order-h3 {
         margin-top: 40px;
         font-size: 36px;
         font-weight: 800;
         text-align: center;
-       
     }
-    #order-form{
+    #order-form {
         max-width: 75vw;
         display: flex;
-        flex-direction:column;
-        ;
+        flex-direction: column;
     }
 
     .select-wrapper {
@@ -2163,12 +2153,12 @@ h5 sub {
         gap: 10%;
         justify-content: center;
         align-items: center;
-      }
-      #description{
+    }
+    #description {
         max-width: 100%;
-      }
-    
-      .select-wrapper select {
+    }
+
+    .select-wrapper select {
         width: 60%;
         padding: 15px; /* Increased padding for larger size */
         border: 1px solid #ccc;
@@ -2181,22 +2171,78 @@ h5 sub {
         -moz-appearance: none;
         cursor: pointer;
         background-color: #f8f8f8;
-      }
-    
+    }
 
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    body {
+        min-width: 320px;
+    }
+
+    #contact-textarea {
+        width: 205%;
+    }
 }
 
-body {
-    min-width: 320px;
+.cards {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 1em;
+}
+.card {
+    position: relative;
+    border: 1px solid #bead8e;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    gap: 5%;
+    padding: 10px;
+    border-radius: 15px;
+}
+.card p {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#contact-textarea{
-   width: 205%;
+.card-buttons {
+    position: absolute;
+    display: flex;
+    right: 18px;
+    top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-
 /*# sourceMappingURL=styles.css.map */
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    cursor: pointer;
+}
+
+.deleteButton {
+    background: none;
+    color: #fa2d2d;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}

@@ -155,3 +155,32 @@ aceptBtn === null || aceptBtn === void 0
                     "pageDetailsAvailability__modalContainer-hidden"
                 );
       });
+
+const editButtons = document.getElementsByClassName("editButton");
+
+for (let i = 0; i < editButtons.length; i++) {
+    let editButtonMode = false;
+    editButtons[i].addEventListener("click", function () {
+        const { oid } = editButtons[i].dataset;
+        const descriptionForm = document.getElementById(`f-${oid}`);
+        const orderDescriptionP = document.getElementById(`p-${oid}`);
+        if (editButtonMode) {
+            descriptionForm.submit();
+            descriptionForm.classList.add("hidden");
+            descriptionForm.classList.remove("visible");
+            orderDescriptionP.classList.add("visible");
+            orderDescriptionP.classList.remove("hidden");
+            editButtons[i].innerText = "edit";
+            editButtons[i].style.color = "#62f088";
+            editButtonMode = false;
+        } else {
+            descriptionForm.classList.add("visible");
+            descriptionForm.classList.remove("hidden");
+            orderDescriptionP.classList.add("hidden");
+            orderDescriptionP.classList.remove("visible");
+            editButtons[i].innerText = "save";
+            editButtons[i].style.color = "#5e5ef5";
+            editButtonMode = true;
+        }
+    });
+}
