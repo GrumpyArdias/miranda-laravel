@@ -15,8 +15,11 @@ class OrderController extends Controller
     public function index()
     {
         $rooms = Room::all();
+        $userId = Auth::user()->id;
+        $orders = Order::where('userId', $userId)->get();
 
-        return view("order", ["rooms" => $rooms]);
+
+        return view("order", ["rooms" => $rooms, "orders" => $orders]);
     }
 
     /**
@@ -58,16 +61,21 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Order $order)
+    public function update()
     {
-        //
+        $orderDescription = request("description");
+        $orderId = request("orderId");
+        Order::where("id", $orderId)->update(['description' => $orderDescription]);
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy()
     {
-        //
+        $orderId = request("orderId");
+        Order::destroy($orderId);
+        return back();
     }
 }
