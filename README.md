@@ -1,8 +1,8 @@
-##Hotel Miranda Laravel App
+# Hotel Miranda Laravel App
 
 The Hotel Miranda Laravel App is a web application designed to facilitate hotel reservations and provide a convenient user experience for both clients and hotel staff. It allows clients to register, login, check booking availability, and make reservations with ease.
 
-##Features:
+## Features:
 
 - User Registration: Clients can create an account to access the reservation system.
 - User Login: Registered users can log in securely to access their accounts.
@@ -10,13 +10,13 @@ The Hotel Miranda Laravel App is a web application designed to facilitate hotel 
 - Reservation: Users can make room reservations based on availability.
 - Admin Dashboard: Hotel staff can manage reservations and view important statistics.
 
-##Requirements:
+## Requirements:
 
 - PHP >= 7.4
 - Laravel >= 8.x
 - Composer (Dependency Manager)
 
-##Installation:
+## Installation:
 
 1. Clone the repository to your local machine
 
@@ -67,12 +67,12 @@ vendor/bin/sail up
 9. Open your web browser and visit http://localhost to access the Hotel Miranda Laravel App.
 
 
-#Acknowledgements:
+## Acknowledgements:
 
 - Laravel - https://laravel.com
 - Laravel Documentation - https://laravel.com/docs
 
-#Contact:
+## Contact:
 
 If you have any questions or feedback, please contact us at info@marioherrero.com
 
