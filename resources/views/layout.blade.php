@@ -37,6 +37,7 @@
                 <a class="a-menu" href="rooms">Rooms</a>
                 <a class="a-menu" href="offers">Offers</a>
                 <a class="a-menu" href="contact">Contact</a>
+                <a class="a-menu" href="order">Order</a>
             </div>
             <div class="container-menu__headers-icon">
                 <div><a href="dashboard"><img src="Assets/Vector.png"></a></div>

@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html {
+    scroll-behavior: smooth;
+}
 header {
     width: 100%;
     background: #ffffff;
@@ -2194,7 +2197,7 @@ h5 sub {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     gap: 1em;
@@ -2245,4 +2248,12 @@ h5 sub {
     font: inherit;
     cursor: pointer;
     outline: inherit;
+}
+
+@media (max-width: 1000px) {
+    .cards {
+        max-width: 500px;
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+
 }

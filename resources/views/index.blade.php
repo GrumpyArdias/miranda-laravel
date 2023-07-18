@@ -3,8 +3,9 @@
 <section class="main">
     <h4 class="main__pre-title">THE ULTIMATE LUXURY EXPERIENCE</h4>
     <h1 class="main__title">The Perfect Base For You</h1>
-    <button class="main__button1">TAKE A TOUR</button>
-    <button class="main__button2">LEARN MORE</button>
+    <button class="main__button1"><a href="#videoTour">TAKE A TOUR</a>
+    </button>
+    <button class="main__button2"><a href="/about">LEARN MORE</a></button>
     <form class="main__form__container" action="/rooms" method="get">
         <div class="main__form__container__body">
             <label>Arrival Date</label>
@@ -26,7 +27,7 @@
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
         </p>
-        <button>BOOK NOW</button>
+        <button><a href="/rooms">BOOK NOW</a></button>
     </div>
     <div>
         <div class="strong-team">
@@ -85,7 +86,7 @@
 </section>
 <section class="intro-video">
     <div class="intro-video__container">
-        <div class="intro-video__title">
+        <div id="videoTour" class="intro-video__title">
             <h6>INTRO VIDEO</h6>
             <h2>Meet With Our Luxury Place</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat you have to understand this.</p>
@@ -94,7 +95,7 @@
             <video src="Assets/hotel.mp4" controls></video>
         </div>
     </div>
-    <button class="intro-video__button">BOOK NOW</button>
+    <button class="intro-video__button"><a href="/rooms">BOOK NOW</a></button>
 </section>
 
 <section class="facilities">

@@ -1,0 +1,12 @@
+name: miradan-laravel
+
+on:
+  push:
+    branches: [main]
+  jobs:
+    create-deployment-artifacts:
+      name: Create deployment artifacts
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
