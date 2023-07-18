@@ -8,7 +8,7 @@ The Hotel Miranda Laravel App is a web application designed to facilitate hotel 
 - User Login: Registered users can log in securely to access their accounts.
 - Booking Availability: Users can check the availability of rooms for their desired dates.
 - Reservation: Users can make room reservations based on availability.
-- Admin Dashboard: Hotel staff can manage reservations and view important statistics.
+
 
 ## Requirements:
 
