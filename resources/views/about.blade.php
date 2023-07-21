@@ -56,7 +56,7 @@
                 minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                 aliquip ex ea commodo consequat.
             </p>
-            <button><a href="#video">TAKE A TOUR</a></button>
+            <a href="#video"><button>TAKE A TOUR</button></a>
         </div>
     </div>
 </section>
