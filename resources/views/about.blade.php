@@ -10,7 +10,7 @@
 </div>
 <section class="about-us__body">
     <div class="about-us__body-video">
-        <video src="Assets/hotel.mp4" autoplay muted controls loop></video>
+        <video id="video" src="Assets/hotel.mp4" autoplay muted controls loop></video>
     </div>
     <h3>
         Hello. Our hotel has been present for over 20 years. We make the best
@@ -56,7 +56,7 @@
                 minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                 aliquip ex ea commodo consequat.
             </p>
-            <button>TAKE A TOUR</button>
+            <button><a href="#video">TAKE A TOUR</a></button>
         </div>
     </div>
 </section>
